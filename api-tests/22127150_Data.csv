@@ -1,0 +1,17 @@
+﻿id,tc_name,parent_id,name,slug,expected_status
+TC01-01,No Parent Id selected,,a,a,201
+TC01-02,Valid Parent Id selected,1,ab,ab,201
+TC01-03,Name field empty,,,cda,422
+TC01-04,Name valid min boundary,,C,c,201
+TC01-05,Name valid max boundary,,jzpqzeapsxpacaciehxcdxefdweexqqbqumwowhajlopeusnqgnnpvplmvdxstgqygyjaeaoqzzfqieqmerhszkibtkaozfkpwvwajkvwjnrcaiiwafxzyrx,abc,201
+TC01-06,Name too long,,jzpqzeapsxpacaciehxcdxefdweexqqbqumwowhajlopeusnqgnnpvplmvdxstgqygyjaeaoqzzfqieqmerhszkibtkaozfkpwvwajkvwjnrcaiiwafxzyrxs,abcd,422
+TC01-07,Name contains special symbols,,TV@123,tv,422
+TC01-08,Duplicate name,,Hand Tools,handtools,422
+TC01-09,Slug empty,,abc,,422
+TC01-10,Slug valid min boundary,,tool,e,201
+TC01-11,Slug valid max boundary,,cba,jzpqzeapsxpacaciehxcdxefdweexqqbqumwowhajlopeusnqgnnpvplmvdxstgqygyjaeaoqzzfqieqmerhszkibtkaozfkpwvwajkvwjnrcaiiwafxzyrx,201
+TC01-12,Slug too long,,ace,jzpqzeapsxpacaciehxcdxefdweexqqbqumwowhajlopeusnqgnnpvplmvdxstgqygyjaeaoqzzfqieqmerhszkibtkaozfkpwvwajkvwjnrcaiiwafxzyrxs,422
+TC01-13,Slug contains spaces,,tv,tv 123,422
+TC01-14,Slug contains special symbols,,dcb,@tv-123,422
+TC01-15,Slug contains uppercase,,tvshop,Tv-Shop,422
+TC01-16,Duplicate slug,,handtools,hand-tools,422

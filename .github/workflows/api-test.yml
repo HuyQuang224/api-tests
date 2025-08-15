@@ -24,8 +24,8 @@ jobs:
 
     - name: Run API tests
       run: |
-        newman run collection.json \
-          -d 22127150_Data.csv \
+        newman run api-tests/collection.json \
+          -d api-tests/22127150_Data.csv \
           --reporters cli,junit \
           --reporter-junit-export results.xml
 

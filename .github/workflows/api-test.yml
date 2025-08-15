@@ -27,7 +27,7 @@ jobs:
         newman run collection.json \
           -d 22127150_Data.csv \
           --reporters cli,junit \
-          --reporter-junit-export results.xml
+          --reporter-junit-export results.xml \
           --suppress-exit-code
 
     - name: Upload test report

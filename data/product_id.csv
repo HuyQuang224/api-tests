@@ -1,0 +1,6 @@
+﻿id,tc_name,product_id,expected_status
+TC03-01,Get existed product_id,1,200
+TC03-02,Get product_id = 0,0,404
+TC03-03,Get not existed product_id,9999,404
+TC03-04,Get product_id = string,"	Combination Pliers",404
+TC03-05,Get without product_id,,200

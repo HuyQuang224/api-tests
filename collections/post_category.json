@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "e2162e92-0586-41f1-bd92-e2c94040418b",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47602445",
+		"_collection_link": "https://huyquang222004-3823890.postman.co/workspace/Quang-Huy-Hu%E1%BB%B3nh's-Workspace~77f33d42-1daa-41e4-8de4-86991c87a7e9/collection/47602445-e2162e92-0586-41f1-bd92-e2c94040418b?action=share&source=collection_link&creator=47602445"
+	},
+	"item": [
+		{
+			"name": "Store new category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(",
+							"    \"Status code matches \" + pm.iterationData.get(\"id\") + \": \" + pm.iterationData.get(\"tc_name\"),",
+							"    function () {",
+							"        pm.expect(pm.response.code).to.eql(",
+							"            parseInt(pm.iterationData.get(\"expected_status\"))",
+							"        );",
+							"    }",
+							");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parent_id\": \"{{parent_id}}\",\n    \"name\":\"{{name}}\",\n    \"slug\":\"{{slug}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/categories?Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS13aXRoLWJ1Z3MucHJhY3RpY2Vzb2Z0d2FyZXRlc3RpbmcuY29tL3VzZXJzL2xvZ2luIiwiaWF0IjoxNzU1MzY0MDYxLCJleHAiOjE3NzA5NjQwNjEsIm5iZiI6MTc1NTM2NDA2MSwianRpIjoiVmFVeXlNckFkSE44S3g1YSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.lbt1fJM14b_Cq8NU_jYIymN61wEcvhPc46Agud3wjWU",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS13aXRoLWJ1Z3MucHJhY3RpY2Vzb2Z0d2FyZXRlc3RpbmcuY29tL3VzZXJzL2xvZ2luIiwiaWF0IjoxNzU1MzY0MDYxLCJleHAiOjE3NzA5NjQwNjEsIm5iZiI6MTc1NTM2NDA2MSwianRpIjoiVmFVeXlNckFkSE44S3g1YSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.lbt1fJM14b_Cq8NU_jYIymN61wEcvhPc46Agud3wjWU"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	]
+}

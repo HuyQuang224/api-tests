@@ -1,0 +1,6 @@
+﻿id,tc_name,category_id,expected_status
+TC02-01,Get existed category_id,1,200
+TC02-02,Get category_id = 0,0,404
+TC02-03,Get not existed category_id,9999,404
+TC02-04,Get category_id = string,Hand Tools,404
+TC02-05,Get without category_id,,200

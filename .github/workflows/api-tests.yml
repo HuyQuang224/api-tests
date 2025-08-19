@@ -1,0 +1,31 @@
+name: API Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Run API 1 tests
+      run: newman run collections/post_category.json -d data/category_data.csv --suppress-exit-code
+
+    - name: Run API 2 tests
+      run: newman run collections/get_category_id.json -d data/category_id.csv --suppress-exit-code
+
+    - name: Run API 3 tests
+      run: newman run collections/get_product_id.json -d data/product_id.csv --suppress-exit-code
